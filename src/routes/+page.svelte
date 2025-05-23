@@ -63,6 +63,17 @@
 						'joyous. Love it!'
 					]}
 					delay={100} />
+
+				<!-- <div class="mt-lg">
+					<ReviewQuote
+						reviewer={{ name: 'Martin Webb', org: 'R&R Magazine' }}
+						text={[
+							'… Red Brick Angel … if you’re looking',
+							'for a fine example of Americana',
+							'… this album is right up your music alley … '
+						]}
+						delay={100} />
+				</div> -->
 			</div>
 		</div>
 

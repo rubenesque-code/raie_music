@@ -18,6 +18,14 @@ const companyTestimony: CompanyTestimony[] = [
 
 const personalTestimony: PersonalTestimony[] = [
 	{
+		name: 'Alexandra Rochford',
+		title: 'Singer Songwriter',
+		aboutHref:
+			'https://www.instagram.com/reel/DHycxHnMSwW/',
+		testimony:
+			"... Rachel is a singing wizard. She has helped transform my voice in a safe and supported way. Her warmups especially are gold dust. I have a sensitive voice and Rachel's approach is perfect for warming up the voice softly and strongly. I can now belt much higher than I used to. She is a special person that has a vast knowledge of music,theatre and the industry. Her sessions are definitely a 'must-have' for professional singers."
+	},
+	{
 		name: 'Carmody',
 		title: 'Singer Songwriter',
 		aboutHref:
