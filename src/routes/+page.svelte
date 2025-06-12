@@ -79,7 +79,7 @@
 				<div
 					class={`transition-opacity ease-in-out duration-[2700ms] ${!showReview1a ? 'opacity-0' : ''}`}>
 					<ReviewQuote
-						reviewer={{ name: 'Martin Webb', org: 'R&R Magazine' }}
+						reviewer={{ name: 'Stephen Harrison', org: 'Blues Matters' }}
 						text={[
 							"Red Brick Angel... if you're looking",
 							'for a fine example of Americana',
@@ -120,7 +120,7 @@
 				<div
 					class={`transition-opacity ease-in-out duration-[2700ms] ${!showReview2a ? 'opacity-0' : ''}`}>
 					<ReviewQuote
-						reviewer={{ name: 'Martin Webb', org: 'R&R Magazine' }}
+						reviewer={{ name: '', org: '' }}
 						text={[
 							'The first round of voting for the',
 							"Grammy Awards '25 opened with",
