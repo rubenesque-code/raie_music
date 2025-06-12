@@ -8,6 +8,8 @@
 	import { Images, LatestNews, Picture } from '$lib/components';
 	import { PageLinks, PlayMusicButton, ReviewQuote } from '$lib/components/+pages/landing';
 	import { BodyContainer, VerticalSpacing } from '$lib/components/layout';
+	import { onMount } from 'svelte';
+	import { sineInOut } from 'svelte/easing';
 </script>
 
 <script lang="ts">
@@ -18,6 +20,54 @@
 			updateGlobalFlags.firstPageIsReady();
 		}
 	}
+
+	let showReview1a = false;
+	let showReview1b = false;
+
+	let showReview2a = false;
+	let showReview2b = false;
+
+	onMount(() => {
+		setTimeout(() => {
+			showReview1a = true;
+
+			setInterval(() => {
+				if (showReview1a) {
+					showReview1a = false;
+
+					setTimeout(() => {
+						showReview1b = true;
+					}, 1350);
+				} else {
+					showReview1b = false;
+
+					setTimeout(() => {
+						showReview1a = true;
+					}, 1350);
+				}
+			}, 9000);
+		}, 100);
+
+		setTimeout(() => {
+			showReview2a = true;
+
+			setInterval(() => {
+				if (showReview2a) {
+					showReview2a = false;
+
+					setTimeout(() => {
+						showReview2b = true;
+					}, 1350);
+				} else {
+					showReview2b = false;
+
+					setTimeout(() => {
+						showReview2a = true;
+					}, 1350);
+				}
+			}, 9000);
+		}, 725);
+	});
 </script>
 
 <BodyContainer>
@@ -26,16 +76,44 @@
 	<div
 		class="flex items-center justify-center sm:items-start sm:justify-between gap-xl md:gap-[4.5rem] lg:gap-2xl">
 		<div class="flex flex-col gap-1.5xl sm:gap-2xl">
-			<div class="">
-				<ReviewQuote
-					reviewer={{ name: 'Martin Cooke', org: 'Bluesmatters Magazine' }}
-					text={[
-						"One of life's trip-me-up revelations.",
-						'A purveyor of pin-me-to-the wall,',
-						'beautiful, life-enhancing soul music.',
-						'A sweet, certain surprise...'
-					]} />
+			<div class="relative">
+				<div
+					class={`transition-opacity ease-in-out duration-[2700ms] ${!showReview1a ? 'opacity-0' : ''}`}>
+					<ReviewQuote
+						reviewer={{ name: 'Martin Webb', org: 'R&R Magazine' }}
+						text={[
+							"Red Brick Angel... if you're looking",
+							'for a fine example of Americana',
+							'… this album is right up your music alley … '
+						]} />
+				</div>
+
+				<div
+					class={`absolute inset-0 z-10 transition-opacity ease-in-out duration-[2700ms] ${!showReview1b ? 'opacity-0' : ''}`}>
+					<ReviewQuote
+						reviewer={{ name: 'Martin Cooke', org: 'Bluesmatters Magazine' }}
+						text={[
+							"One of life's trip-me-up revelations.",
+							'A purveyor of pin-me-to-the wall,',
+							'beautiful, life-enhancing soul music.',
+							'A sweet, certain surprise...'
+						]} />
+				</div>
 			</div>
+			<!-- {:else} -->
+			<!-- <div
+					class=""
+					in:fade={{ duration: 1000, easing: sineInOut, delay: 1000 }}
+					out:fade={{ duration: 1000, easing: sineInOut }}>
+					<ReviewQuote
+						reviewer={{ name: 'Martin Cooke', org: 'Bluesmatters Magazine' }}
+						text={[
+							"One of life's trip-me-up revelations.",
+							'A purveyor of pin-me-to-the wall,',
+							'beautiful, life-enhancing soul music.',
+							'A sweet, certain surprise...'
+						]} />
+				</div> -->
 
 			<div class="sm:hidden px-[4.5rem]">
 				<div
@@ -53,27 +131,31 @@
 			</div>
 
 			<div
-				class="translate-x-sm xxs:translate-x-md xs:translate-x-xl xs/sm:translate-x-[4rem] sm:translate-x-[0rem]">
-				<ReviewQuote
-					reviewer={{ name: 'Martin Webb', org: 'R&R Magazine' }}
-					text={[
-						'Raie has stepped forward with a',
-						'beautifully assured solo album...',
-						'Heart-tuggingly moving and edgily',
-						'joyous. Love it!'
-					]}
-					delay={100} />
-
-				<!-- <div class="mt-lg">
+				class="relative translate-x-sm xxs:translate-x-md xs:translate-x-xl xs/sm:translate-x-[4rem] sm:translate-x-[0rem]">
+				<div
+					class={`transition-opacity ease-in-out duration-[2700ms] ${!showReview2a ? 'opacity-0' : ''}`}>
 					<ReviewQuote
 						reviewer={{ name: 'Martin Webb', org: 'R&R Magazine' }}
 						text={[
-							'… Red Brick Angel … if you’re looking',
-							'for a fine example of Americana',
-							'… this album is right up your music alley … '
-						]}
-						delay={100} />
-				</div> -->
+							'The first round of voting for the',
+							"Grammy Awards '25 opened with",
+							"Raie's album Red Brick Angel placed",
+							'in the Country & American Roots',
+							'Music for Best Americana Album'
+						]} />
+				</div>
+
+				<div
+					class={`absolute inset-0 transition-opacity ease-in-out duration-[2700ms] ${!showReview2b ? 'opacity-0' : ''}`}>
+					<ReviewQuote
+						reviewer={{ name: 'Martin Webb', org: 'R&R Magazine' }}
+						text={[
+							'Raie has stepped forward with a',
+							'beautifully assured solo album...',
+							'Heart-tuggingly moving and edgily',
+							'joyous. Love it!'
+						]} />
+				</div>
 			</div>
 		</div>
 
