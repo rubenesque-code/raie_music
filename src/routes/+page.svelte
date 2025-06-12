@@ -1,4 +1,5 @@
 <script context="module" lang="ts">
+	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
 	import { updateGlobalFlags } from '$lib/stores';
@@ -8,8 +9,6 @@
 	import { Images, LatestNews, Picture } from '$lib/components';
 	import { PageLinks, PlayMusicButton, ReviewQuote } from '$lib/components/+pages/landing';
 	import { BodyContainer, VerticalSpacing } from '$lib/components/layout';
-	import { onMount } from 'svelte';
-	import { sineInOut } from 'svelte/easing';
 </script>
 
 <script lang="ts">
@@ -100,20 +99,6 @@
 						]} />
 				</div>
 			</div>
-			<!-- {:else} -->
-			<!-- <div
-					class=""
-					in:fade={{ duration: 1000, easing: sineInOut, delay: 1000 }}
-					out:fade={{ duration: 1000, easing: sineInOut }}>
-					<ReviewQuote
-						reviewer={{ name: 'Martin Cooke', org: 'Bluesmatters Magazine' }}
-						text={[
-							"One of life's trip-me-up revelations.",
-							'A purveyor of pin-me-to-the wall,',
-							'beautiful, life-enhancing soul music.',
-							'A sweet, certain surprise...'
-						]} />
-				</div> -->
 
 			<div class="sm:hidden px-[4.5rem]">
 				<div
