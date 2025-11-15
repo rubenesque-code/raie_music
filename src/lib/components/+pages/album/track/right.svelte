@@ -57,11 +57,13 @@
 
 		{#if data.lyrics.length}
 			<button
-				class="p-xxs text-my-black-500 rounded-full"
+				class="text-my-black-500 rounded-full"
 				on:click={() => (lyricsIsOpen = !lyricsIsOpen)}
 				id="track-lyrics"
-				type="button"><Icon.Lyrics weight="thin" /></button>
-			<Tooltip text="lyrics" triggeredById="track-lyrics" />
+				type="button">
+				<span class="uppercase text-[10.5px] tracking-wide">lyrics</span>
+			</button>
+			<Tooltip text="view lyrics" triggeredById="track-lyrics" />
 		{:else if !noLyrics}
 			<button class="invisible p-xxs text-my-black-500 rounded-full"
 				><Icon.Lyrics weight="thin" /></button>

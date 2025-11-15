@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	import type { ImageAsset } from '$lib/assets';
+	import type { ImgAsset } from '$lib/assets';
 	import { albums_meta, songsArr, type AlbumKey } from '$lib/data';
 	import { ImageGalleryModal, Images, Tooltip, LinkIconSwitch } from '$lib/components';
 	import { ImageScroller, Track } from '$lib/components/+pages/album';
@@ -11,7 +11,7 @@
 </script>
 
 <script lang="ts">
-	export let images: ImageAsset[];
+	export let images: ImgAsset[];
 	export let tracksMinWidth: number;
 	export let albumKey: AlbumKey;
 	export let noVideos = false;

@@ -1,13 +1,7 @@
-type ImgProps = {
-	src: string;
-	w: number;
-};
-type ImgPropsH = ImgProps & { h: number };
-
-type ImgMeta = { img: ImgPropsH; sources: { [key: string]: ImgProps[] } };
+import type { ImgMeta } from "./picture";
 
 type Image = {
-	src: ImgMeta[];
+	src: ImgMeta | ImgMeta[];
 	naturalDimensions: {
 		width: number;
 		height: number;
